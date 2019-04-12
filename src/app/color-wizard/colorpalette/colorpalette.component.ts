@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { WizardComponent } from '../wizard.component';
-import { CommonService } from 'src/app/common.service';
+
 
 @Component({
 	selector: 'app-colorpalette',
@@ -32598,14 +32598,11 @@ export class ColorpaletteComponent implements OnInit {
 		}
 	]
 	selectedType: any="ALL";
-	constructor(private router:Router,private snackbar:MatSnackBar,private wizardComponent:WizardComponent,private _commonService:CommonService) { }
+	constructor(private router:Router,private snackbar:MatSnackBar,private wizardComponent:WizardComponent) { }
 	htmlColorPalette = []
 	serviceData=[];
 	ngOnInit() {
-		this._commonService.getMethod('colorPortfolio').subscribe(data=>{
-			console.log('Dataaaaa',data["data"]);
-			this.serviceData=data["data"]
-		})					
+				
 		sessionStorage.getItem('TOKEN')
 		this.wizardComponent.progressMethod('second')
 		this.sections.forEach(element => {
@@ -32617,18 +32614,11 @@ export class ColorpaletteComponent implements OnInit {
 			this.selectedColors=JSON.parse(sessionStorage.getItem("selectedColors"))
 		}
 	}
-
 	selectedColors = []
 	addColor(color) {
 		if(this.selectedColors.filter(item=>item.rgb==color.rgb).length==0){
-			if(this.selectedColors.length<8){
 			this.selectedColors.push(color);
 			sessionStorage.setItem("selectedColors",JSON.stringify(this.selectedColors))
-			}else{
-				this.snackbar.open("Please delete some colors to add", 'Ok', {
-					duration: 2000,
-				  });
-			}
 		}
 	}
 	rgb(color) {

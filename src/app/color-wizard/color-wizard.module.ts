@@ -8,7 +8,6 @@ import { ColorpaletteComponent } from './colorpalette/colorpalette.component';
 import { ColorWRoutingModule } from './color-wizard.routing';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PaintpredefinedComponent } from './paintpredefined/paintpredefined.component';
-import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 @NgModule({
@@ -23,8 +22,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     ReactiveFormsModule,
     SharedModule,
     ColorWRoutingModule,
-    CommonModule,
-    ScrollingModule
+    CommonModule
   ]
 })
 export class ColorWizardModule { }
