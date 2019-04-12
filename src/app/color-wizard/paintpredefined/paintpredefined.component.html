@@ -1,0 +1,25 @@
+<div>
+  <mat-card class="wizard-main-card">
+    <h6>Select a scene to paint </h6>
+    <ul class="filter-types">
+      <li *ngFor="let img of imagesTypes" (click)="selectType(img.type)" [class.activeType]="selectedType==img.type">
+        {{img.label}}</li>
+   
+    </ul>
+    <div class="row  flex-container">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 flex-item" *ngFor="let img of images"
+        (click)="selectImage(img);seleted=aa">
+        <mat-checkbox class="checkBox" *ngIf='selectedImage&&selectedImage.imgId==img.imgId&&selectedImage.type==img.type'
+          [checked]="true" disabled></mat-checkbox>
+      </div>
+    </div>
+  </mat-card>
+  <div class="selectedColors-root">
+    <div class="selectedColors">
+    <div *ngFor="let color of this.selectedColors" [style.background]="rgb(color.rgb)" class="color-strip">
+      <span style='font-size:13px;' (click)="deleteColor(color)">&#10006;</span>
+    </div>
+    </div>
+    <button class="btn btn-primary step-btn" (click)="nextStep()">Next</button>
+  </div>
+</div>

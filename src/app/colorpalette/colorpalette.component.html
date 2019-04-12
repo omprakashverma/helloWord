@@ -1,0 +1,22 @@
+<!-- <div class="paletteRoot">
+<div class="palette"  *ngFor="let palette of paletts">
+  <div *ngFor="let color of palette.colors" class="flex-item">
+    <div class="color-block" [style.background]="color!=''?color:''" (click)="addColor(color);">
+    </div>
+  </div>
+</div>
+</div> -->
+<div class="paletteRoot">
+  <div class="palette" *ngFor="let palette of this.htmlColorPalette">
+    <div class="row" style="display: contents;">
+      <div class="col-lg-12">
+        <span style="display: block">{{palette.jswSection}}</span>
+      </div>
+    </div>
+    
+    <div *ngFor="let color of palette.colors" class="flex-item">
+      <div class="color-block" [style.background]="rgb(color.rgb)" (click)="addColor(color);">
+      </div>
+    </div>
+  </div>
+</div>

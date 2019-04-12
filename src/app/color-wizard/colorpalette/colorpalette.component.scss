@@ -1,0 +1,248 @@
+// .paletteRoot{
+//     display: flex;
+//     position: relative;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     margin: auto;
+// /*     margin-top: 100px; */
+
+// .palette{
+//     display: flex;
+//     position: relative;
+//     width: 20%;
+//    /*  width: 300px; */
+//     flex-wrap: wrap;
+//     margin: auto;
+//   /*   margin-top: 100px; */
+//     .flex-item{
+//         flex-basis: 12%;
+//         height: 20px;
+//         position: relative;
+//         .color-block {
+//             position: absolute;
+//             cursor: pointer;
+//             width: 100%;
+//             height: 100%;
+//             // transform: scale(2);
+//             // ;
+//             // z-index: 4;
+//         }
+//     }
+//     .flex-item:hover{
+//         position: relative;
+//         .color-block {
+//             position: absolute;
+//             cursor: pointer;
+//             width: 100%;
+//             height: 100%;
+//             transform: scale(2);
+//             // ;
+//             z-index: 4;
+//         }
+//     }
+// }
+// .palette:hover{
+//     position: relative;
+//     cursor: pointer;
+    
+// /*     transform: scale(2);
+
+//     z-index: 4; */
+//     .flex-item{
+//         flex-basis: 12%;
+//         height: 20px;
+//         position: relative;
+//         .color-block {
+//             position: absolute;
+//             cursor: pointer;
+//             width: 100%;
+//             height: 100%;
+   
+//         }
+//     }
+//     .flex-item:hover{
+//         position: relative;
+//         .color-block {
+//             position: absolute;
+//             cursor: pointer;
+//             width: 100%;
+//             height: 100%;
+//             transform: scale(2);
+  
+//             z-index: 4;
+//         }
+//     }
+// }
+
+// }
+
+// .filter-types{
+
+//     padding: 0px;
+//     text-decoration: none;
+//     display: flex;
+//     list-style-type: none;
+//     width: 60%;
+//     li{
+//         padding-right: 12px;
+//         padding-left: 12px;
+//         border-left: 1px solid whitesmoke;
+//         cursor: pointer;
+//     }
+//     li:first-child {
+//         padding-right: 12px;
+//         padding-left: 0px;
+//         border-left: none
+//       }
+// }
+
+
+
+
+/* New PAlette  Design*/
+.activeType{
+    color: blue
+}
+.paletteRoot{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+
+.palette{
+    display: flex;
+    position: relative;
+    width:100%;
+
+    flex-wrap: wrap;
+    margin: auto;
+    .add-color{
+        display: none;
+    }
+    h6{
+        text-align: left !important;
+        color:grey !important;
+        font-weight: lighter !important;
+        font-weight: 300 !important;
+        font-size: 20px !important;
+    }
+    .flex-item{
+        width: 73px;
+        margin: 8px;
+        height: 73px;
+        position: relative;
+        .color-block {
+            position: absolute;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        
+        }
+    }
+    .flex-item:hover{
+        position: relative;
+        .color-block {
+            position: absolute;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            transform: scale(2);
+            // ;
+            z-index: 4;
+        }
+    }
+}
+.palette:hover{
+    position: relative;
+    cursor: pointer;
+    .flex-item{
+        // flex-basis: 12%;
+        // height: 20px;
+        position: relative;
+        .color-block {
+            position: absolute;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+    }
+  
+    .flex-item:hover{
+        position: relative;
+        .color-block {
+          
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            transform: scale(2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 4;
+          
+            .add-color{
+                display: block;
+                margin: auto;
+                border: 1px solid;
+                border-radius: 19px
+            }
+            .nameColor{
+                position: absolute;top:0px;    left: 10px;
+            }
+        }
+    }
+}
+
+}
+
+.filter-types{
+
+    padding: 0px;
+    text-decoration: none;
+    display: flex;
+    list-style-type: none;
+    width: 60%;
+    li{
+        padding-right: 12px;
+        padding-left: 12px;
+        border-left: 1px solid whitesmoke;
+        cursor: pointer;
+    }
+    li:first-child {
+        padding-right: 12px;
+        padding-left: 0px;
+        border-left: none
+      }
+}
+
+.checkBox{
+    position: absolute;
+    display: flex;
+    right: 0px;
+    top: 0px;
+}
+
+.selectedColors{
+   /*  position: absolute; */
+    bottom: 0px;
+    height: 69px;
+    display: flex;
+    flex-direction: row;
+   /*  width: 96%; */
+   overflow: auto;
+   div{
+       width: 100%;
+   }
+}
+
+.color-strip{
+position: relative;
+span{
+    position: absolute;
+    top:0px;
+    right: 0px;
+    cursor: pointer;
+}
+}

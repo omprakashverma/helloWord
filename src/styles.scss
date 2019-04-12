@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body{
+    font-family: sans-serif;
+}
+.main-container{
+    padding-top: 66px;
+    text-align: center;
+}
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #424142 !important;
+}
+.wizard-main-card{
+    overflow: auto;
+    max-height: 400px;
+}
+.step-btn{
+    padding-left: 54px;
+    padding-right: 54px;
+    background: #5a5a5a;
+    color: white;
+    // position: absolute;
+    right: 0px;
+    height: 69px;
+}
+.selectedColors-root{
+    display: flex;
+    justify-content: flex-end;
+    .selectedColors{
+        position: relative;
+        bottom: 0px;
+        height: 69px;
+        display: flex;
+        flex-direction: row;
+       /*  width: 96%; */
+       overflow: auto;
+       div{
+           width: 100%;
+       }
+    }
+}
+
+ 
+ .color-strip{
+ position: relative;
+ span{
+     position: absolute;
+     top:0px;
+     right: 0px;
+     cursor: pointer;
+ }
+ }
+
+ h6{
+    text-align: left !important;
+    color:grey !important;
+    font-weight: lighter !important;
+    font-weight: 300 !important;
+    font-size: 20px !important;
+}

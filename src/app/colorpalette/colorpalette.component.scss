@@ -1,0 +1,111 @@
+/* .paletteRoot{
+    display: flex;
+    position: relative;
+    width: 300px;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 100px;
+    .flex-item{
+        width: 20%;
+        height: 20px;
+        position: relative;
+        .color-block {
+            position: absolute;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            // transform: scale(2);
+            ;
+            // z-index: 4;
+        }
+    }
+    .flex-item:hover{
+        position: relative;
+        .color-block {
+            position: absolute;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            transform: scale(2);
+            ;
+            z-index: 4;
+        }
+    }
+}*/
+.paletteRoot{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 100px;
+
+.palette{
+    display: flex;
+    position: relative;
+    width: 20%;
+   /*  width: 300px; */
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 100px;
+    .flex-item{
+        flex-basis: 12%;
+        height: 20px;
+        position: relative;
+        .color-block {
+            position: absolute;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            // transform: scale(2);
+            // ;
+            // z-index: 4;
+        }
+    }
+    .flex-item:hover{
+        position: relative;
+        .color-block {
+            position: absolute;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            transform: scale(2);
+            // ;
+            z-index: 4;
+        }
+    }
+}
+.palette:hover{
+    position: relative;
+    cursor: pointer;
+    
+    transform: scale(2);
+
+    z-index: 4;
+    .flex-item{
+        flex-basis: 12%;
+        height: 20px;
+        position: relative;
+        .color-block {
+            position: absolute;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+   
+        }
+    }
+    .flex-item:hover{
+        position: relative;
+        .color-block {
+            position: absolute;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            transform: scale(2);
+  
+            z-index: 4;
+        }
+    }
+}
+
+}

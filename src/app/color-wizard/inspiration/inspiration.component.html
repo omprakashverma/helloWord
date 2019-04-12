@@ -1,0 +1,64 @@
+<mat-card class="wizard-main-card" >
+    <ng-container *ngIf="!this.url">
+        <div class="placeholder" for="addImage" style="margin-top: 100px;">
+            <h4>Add Image <br> <span>only .JPEG, .JPG, .PNG</span></h4>
+            <div class="col-xs-13 or_browser">
+                <div class="file_upload file_upload_next">
+                    <label for="fileupload123" class="btn btn-hg btn-primary btn-embossed">
+                        Browse </label>
+                    <input type="file" accept="image/*" (change)="readUrl($event)" multiple="" name="files[]"
+                        value="Browse" id="fileupload123" class="fileUploadClasses2" style="display :none">
+                </div>
+            </div>
+        </div>
+        
+    </ng-container>
+    <input type='file' id="addImage" accept="image/*" (change)="readUrl($event)" style="display :none">
+    <ng-container>
+        <div class="main">
+            <div class="row" style="width: 100%;">
+                <div class="col-lg-5">
+                    <div id="canvas-wrap" class="example-boundary" style="text-align:center;">
+                        <ng-container *ngIf="this.url">
+
+
+                            
+                            <div #dragElement *ngFor="let point of imgColors;let i=index" id="pt{{i}}" class="example-box"  (click)="getPixel($event,'drag',dragElement.id); "
+                                (cdkDragEnded)="onDragEnded($event)" cdkDragBoundary=".example-boundary" cdkDrag
+                                style="height:15px;width:15px;border: 1px solid;border-radius: 10px; position:absolute;"
+                                [style.background]="point.color!=='' ? point.color : ''"  [style.left]="point.x!=='' ? point.x : ''" [style.top]="point.y!=='' ? point.y : ''"> 
+                            </div>
+                        </ng-container>
+                        <canvas id="banners" width="500" height="500" #canvasval class="hideData"
+                            [class.displayData]="displayData" (click)="getPixel($event,'click')">
+                        </canvas>
+                       
+                    </div>
+                </div>
+
+                <div class="col-lg-3" style=" padding-top: 23px;">
+
+                    <ng-container *ngIf="this.url">
+                        <button class="btn colorPickerBtn" (click)="getMyPalletdata(this.url)">Get Prominet
+                            color</button>
+                    </ng-container>
+                    <ul class="colorlist">
+                        <li *ngFor="let color of imageColors" [style.background]="color!=='' ? color : ''">{{color}}<img src="assets/images/delete.png" (click)="deleteColor(color)"/>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <div class="data hideData" [class.displayData]="displayData">
+                        <h2>Preview</h2>
+                        <div #colboxval class="colorval" [class.displayCol]="displayCol" style="margin:auto"></div>
+                        <h2>HEX Value:</h2>
+                        <input type="text" value={{_hexval}}>
+                        <h2>RGBA Value:</h2>
+                        <input type="text" value={{_rgbaval}}>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </ng-container>
+</mat-card>

@@ -1,0 +1,130 @@
+.img-card{
+/*     height: 500px;
+    width: 1000px; */
+}
+.img-responsive{
+    height: 100%;
+    width:100%
+}
+
+.demodiv{
+    width:110px;
+    height: 100px
+    }
+    
+    .main{
+        display:flex;  
+    }
+    input[type='file'],canvas{
+      margin: 10px;
+      background-color:#e2e2e2;
+    }
+    
+    input[type='text']
+    {
+      box-shadow:0px 0px 5px 5px #e2e2e2;
+    }
+    
+    canvas
+    {
+    width:500px;
+    height:400px;
+    cursor:crosshair;
+    // box-shadow:0px 0px 5px 5px #e2e2e2;
+    }
+    .data{
+      margin: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+    .data>*{
+      margin: 10px;
+    }
+    .hideData
+    {
+      display:none;
+    }
+    .displayData
+    {
+      display:block;
+    }
+    .colorval
+    {
+      width:100px;
+      height:100px;
+      margin:auto !important;
+      border:1px solid black;
+      border-radius: 5px;
+      box-shadow:0px 0px 5px 5px #e2e2e2;
+
+    }
+    .displayCol
+    { 
+      display:block;
+      background-color: var(--bgcolorval);
+    }
+    body {
+      --bgcolorval: rgba(0,0,0,0)
+    }
+    @media only screen and (max-width :400px){
+      .main{
+        flex-direction: column;
+      }
+    }
+    
+    
+    .colorlist{
+        display: flex;
+        justify-content: space-between;
+       flex-direction: column;
+        list-style-type: none;
+      overflow: auto;
+      height: 300px;
+      li{
+        height: 52px;
+        margin: 5px;
+        position: relative;
+        img{
+          position: absolute;
+          right: 1px;
+          cursor: pointer;
+        }
+      }
+    }
+
+
+    .img-magnifier-container {
+        position:relative;
+      }
+      
+      .img-magnifier-glass {
+        position: absolute;
+        border: 3px solid #000;
+        border-radius: 50%;
+        cursor: none;
+        /*Set the size of the magnifier glass:*/
+        width: 100px;
+        height: 100px;
+      }
+
+      .main-image-container{
+
+      }
+      .placeholder{
+        text-align: center;
+        overflow: hidden;
+        color: #2c3e50;
+        border: 5px dashed #ecf0f1;
+        padding: 20px 20px 40px 20px;
+/*         margin: 40px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px; */
+        border-radius: 10px;
+      }
+
+      .colorPickerBtn{
+       
+        box-shadow: 2px 2px 8px 1px;
+        margin-bottom: 10px;
+    
+      }

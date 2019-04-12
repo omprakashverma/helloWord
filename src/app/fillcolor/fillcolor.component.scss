@@ -1,0 +1,88 @@
+#SVGcontainer{
+    position:absolute;
+    left:100px;
+    z-index:1;
+    }
+    
+    #mySVG{
+    }
+    
+    .btn{
+    background:green;
+    padding:10px;
+    display:inline-block;
+    cursor:pointer;
+    }
+    
+    .myPath{
+    cursor:pointer;
+    }
+    
+    #imageContainer{
+    width:800px;
+    position:absolute;
+    z-index:0;
+    left:300px;
+    }
+    
+    #imageContainer img{
+    width:100%;
+    }
+    
+    #btnContainer{
+    float:left;
+    margin:630px 0px 0px 300px;
+    }
+    
+    .btnActive{
+    border: 2px #000000 solid;
+    }
+    
+    #myImage{
+    border:5px #000000  solid;
+    
+    }
+    
+    svg{
+     position:absolute;
+    }
+    
+    svg polygon{
+     mix-blend-mode: multiply;
+    }
+    
+    svg path{
+     mix-blend-mode: multiply;
+    }
+    
+    
+    img{
+     position:absolute;
+    }
+    
+    
+    #container img{
+    width:900px;
+    }
+    
+    #container svg{
+    width:900px;
+    }
+    
+    svg polygon:before {
+        content: "morya";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, .15)), to(rgba(0, 0, 0, .25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, .1)), color-stop(0.501, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0)));
+        background: -moz-linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), -moz-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
+        background: linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
+    }
+
+    .fill-color{
+        position: relative;
+        display: flex;
+        justify-content: end;
+    }

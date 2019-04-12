@@ -1,0 +1,29 @@
+<div class="wrapper top-marign-from-nav background-color-white">
+  <div class="container wizard-main-body static-info-pages">
+      <div class="static-info-content-wthout-border">
+          <!-- <div class="top-nav-bar content-center-align" > -->
+          <div class="stepwizard-step">
+              <div class="container-fluid">
+                  <div class="wizard  row ">
+                      <a id="stp1" Class="stp1 opacityChange" href="javascript:;" [class.active]="currentComp === 'first'" (click)="progressMethod('first')"
+                           > 
+                        <!--   <div class="step-number">1</div> -->
+                        Step 1: Select a room to paint
+                      </a>
+                      <a class="stp2 opacityChange" href="javascript:;" [class.active]="currentComp === 'second'" (click)="progressMethod('second')" >
+                          <!-- <div class="step-number">2</div> -->Step 2: Choose colours of your choice
+                      </a>
+  
+                      <a class="stp5 opacityChange" href="javascript:;" [class.active]="currentComp === 'fifth'" (click)="progressMethod('fifth')" >
+                         <!--  <div class="step-number">5</div> -->Step 3: Visualize your home painted
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <!-- </div> -->
+          <div>
+              <router-outlet></router-outlet>
+          </div>
+      </div>
+  </div>
+</div>

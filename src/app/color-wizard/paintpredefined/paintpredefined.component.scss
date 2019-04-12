@@ -1,0 +1,46 @@
+.filter-types{
+    /* justify-content: space-around; */
+    padding: 0px;
+    text-decoration: none;
+    display: flex;
+    list-style-type: none;
+    width: 60%;
+    li{
+        padding-right: 12px;
+        padding-left: 12px;
+        border-left: 1px solid whitesmoke;
+        cursor: pointer;
+    }
+    li:first-child {
+        padding-right: 12px;
+        padding-left: 0px;
+        border-left: none
+      }
+}
+.flex-container{
+    padding: 10px;
+    .flex-item{
+        height:150px;
+        border:1px solid #969394;
+        background: whitesmoke;
+        margin: 7px;
+        padding: 0px;
+        max-width:252px;
+        width:23%;
+        position: relative;
+        background-image: url("/assets/images/svg/1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        .checkBox{
+            position: absolute;
+            display: flex;
+            right: 0px;
+            top: 0px;
+        }
+    }
+}
+
+.activeType{
+    color: blue
+}

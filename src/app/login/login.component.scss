@@ -1,0 +1,30 @@
+.padding-zero{
+    padding: 0px;
+}
+.margin-zero{
+    margin: 0px
+}
+
+.login{
+    position: absolute;
+    right: 100px;
+    top: 90px;
+    width: 30%;
+
+}
+.input-div{
+    text-align: left;
+    margin-bottom: 15px;
+    label{
+        display: block;
+    }
+    input{
+        width: 100%;
+    }
+}
+.action{
+    text-align: center !important;
+    button{
+        width: 41%;
+    }
+}
