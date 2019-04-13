@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { WizardComponent } from '../wizard.component';
+//import { CommonService } from 'src/app/common.service';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { ColorpalletService } from './colorpallet.service';
 
 
 @Component({
@@ -10,14 +13,19 @@ import { WizardComponent } from '../wizard.component';
 	styleUrls: ['./colorpalette.component.scss']
 })
 export class ColorpaletteComponent implements OnInit {
+	allcommon={
+		"jswSection": "WHITE",
+		"pageNoWithinSection": 1,
+		"pageNoInFandeck": 1,
+	}
 	newPallets = [
 		{
 			"id": 1,
-			"jswSection": "WHITE",
+		
 			"sectionCode": "1",
-			"pageNoWithinSection": 1,
-			"pageNoInFandeck": 1,
-			"chipPosition": 1,
+			
+		
+			"-": 1,
 			"jwsColorCode": 1011,
 			"jwsColorName": "New Start",
 			"directShade": "No",
@@ -32597,28 +32605,61 @@ export class ColorpaletteComponent implements OnInit {
 			"fandeckPostion": 5
 		}
 	]
+	apiURL: string = 'http://192.168.168.51:8000/api/';
 	selectedType: any="ALL";
-	constructor(private router:Router,private snackbar:MatSnackBar,private wizardComponent:WizardComponent) { }
+	constructor(private httpClient: HttpClient,private router:Router,private snackbar:MatSnackBar,private wizardComponent:WizardComponent,private colorpalletService:ColorpalletService) { }
 	htmlColorPalette = []
 	serviceData=[];
-	ngOnInit() {
-				
-		sessionStorage.getItem('TOKEN')
-		this.wizardComponent.progressMethod('second')
-		this.sections.forEach(element => {
-			let data = this.newPallets.filter(item => item.sectionCode == JSON.stringify(element.sectionCode))
-			this.htmlColorPalette.push({ colors: data, jswSection: element.sectionName })
+	collorpalletsList:any=[];
+	collorsectionsList:any=[];
+	headers: any;
+	TOKEN:string;
+	get_products(){
+		let config = {
+			headers: {
+			  "Content-Type": "application/json",
+			  'Access-Control-Allow-Origin': '*',
+			  }
+			}
+		this.httpClient.get(this.apiURL + '/colorPortfolio',config).subscribe((res)=>{
+			console.log('from api',res);
 		});
-		this.selectedColorSection = this.htmlColorPalette.filter(item => item);
+	  }
+
+	ngOnInit() {
+		this.colorpalletService.getcolorSections('jswSection').subscribe(data=>{
+			this.collorsectionsList=data["data"]
+				console.log('color sections',this.collorsectionsList)
+			})
+		this.colorpalletService.getcolorPallets('colorPortfolio').subscribe(data=>{
+	this.collorpalletsList=data["data"]
+			console.log('color pallets',this.collorpalletsList)
+			this.collorsectionsList.forEach(element => {
+				let data = this.collorpalletsList.filter(item => item.sectionCode == JSON.stringify(element.sectionCode))
+				this.htmlColorPalette.push({ colors: data, jswSection: element.sectionName })
+			});
+			this.selectedColorSection = this.htmlColorPalette.filter(item => item);
+		})
+					
+	//	sessionStorage.getItem('TOKEN')
+		this.wizardComponent.progressMethod('second')
+	
 		if(sessionStorage.getItem("selectedColors")){
 			this.selectedColors=JSON.parse(sessionStorage.getItem("selectedColors"))
 		}
 	}
+
 	selectedColors = []
 	addColor(color) {
 		if(this.selectedColors.filter(item=>item.rgb==color.rgb).length==0){
+			if(this.selectedColors.length<8){
 			this.selectedColors.push(color);
 			sessionStorage.setItem("selectedColors",JSON.stringify(this.selectedColors))
+			}else{
+				this.snackbar.open("Please delete some colors to add", 'Ok', {
+					duration: 2000,
+				  });
+			}
 		}
 	}
 	rgb(color) {
